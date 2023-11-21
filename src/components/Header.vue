@@ -29,20 +29,23 @@
 
 .header__inner a {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: inline-block;
 }
 
 .header__inner a::before {
     content: '';
     position: absolute;
-    border: solid 1px;
-    bottom: 0;
+    background-color: #000;
+    bottom: -1px;
     left: 0;
-    width: 0%;
+    width: 0px;
+    height: 1px;
 }
 
-.header__inner a:hover {
+
+.header__inner a:hover::before {
+    transition: .5s;
     width: 100%;
 }
 
@@ -83,5 +86,10 @@ button::after {
     border-width: 3px 3px 0 0;
     transform: rotate(45deg);
     margin-left: 5px;
+}
+
+button:hover::after {
+    transform: scale(1.3)rotate(45deg);
+    transition: .5s;
 }
 </style>
