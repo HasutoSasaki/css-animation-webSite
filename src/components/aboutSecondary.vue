@@ -1,7 +1,9 @@
 <template>
     <div class="aboutSecondary">
-        <div class="aboutSecondary__inner">
-            <div class="aboutSecondary__bg">
+        <div class="aboutSecondary__bg">
+            <div class="aboutSecondary__inner">
+                <!-- <h1>aa</h1> -->
+                <!-- <div class="triangle"></div> -->
                 <div class="aboutSecondary__text">
                     <h2>secondary</h2>
                     <p>このサイトは、<span>一人でも稼げる</span>スキルを身につけるためのリソースです。プログラミングスクールの提供を通じて、未経験者でも挫折しない環境を提供しています。</p>
@@ -12,10 +14,15 @@
 </template>
 
 <style scoped>
+.aboutSecondary {
+    margin-bottom: 50px;
+}
+
 .aboutSecondary__inner {
     max-width: 1200px;
     margin: 0 auto;
     color: #fff;
+    display: flex;
 }
 
 .aboutSecondary__bg {
@@ -48,6 +55,41 @@
 
     100% {
         transform: translate(0, 0);
+    }
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid white;
+    /* animation: triangle-fadeIn 2s ease 2s, triangle-rote 2s ease 4s; */
+    transform: translateX(-200px) rotate(-150deg);
+    /* opacity: 0; */
+    animation-fill-mode: forwards;
+    position: absolute;
+}
+
+@keyframes triangle-fadeIn {
+    0% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes triangle-rote {
+    0% {
+        transform: rotate(-100deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 }
 
